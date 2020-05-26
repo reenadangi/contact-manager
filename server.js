@@ -1,5 +1,12 @@
 const express=require('express');
+const connectDB=require('./config/db');
+
 const app=express();
+
+// connect MongoDB
+connectDB();
+// middleware
+app.use(express.json({extented:false}));
 app.get('/',(req,res)=>res.json({msg:'Contact Keeper'}));
 
 // define routes
