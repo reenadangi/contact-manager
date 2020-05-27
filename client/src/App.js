@@ -1,26 +1,29 @@
 import React, { Fragment } from 'react';
 
-import './App.css';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 
 import NavBar from './components/layout/Navbar';
+import ContactState from './context/contact/ContactState';
+import './App.css';
 
 const App=()=> {
   return (
-   <Router>
-    <Fragment>
-    <NavBar />
-     <div className="contain">
-       <Switch>
-         <Route exact path="/" component={Home}/>
-         <Route exact path="/about" component={About}/>
+   <ContactState>
+    <Router>
+      <Fragment>
+      <NavBar />
+      <div className="contain">
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/about" component={About}/>
 
-       </Switch>
-     </div>
-    </Fragment>
-    </Router>
+        </Switch>
+      </div>
+      </Fragment>
+      </Router>
+    </ContactState>
   );
 }
 
