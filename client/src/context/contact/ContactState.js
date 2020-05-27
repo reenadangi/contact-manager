@@ -40,10 +40,10 @@ const ContactState=props=>{
     // set current
     //clear current
     return(
-        <ContactContext.Provider>
+        <ContactContext.Provider
            value={{
                contacts:state.contacts
-           }}
+           }}>
             {props.children}
         </ContactContext.Provider>
     )
