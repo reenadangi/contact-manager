@@ -1,15 +1,18 @@
 // racf
 import React, {Fragment, useContext} from 'react';
-import ConatactContext from '../../context/contact/contactContext'
+import ContactContext from '../../context/contact/contactContext';
+import ContactItem from './ContactItem';
 
 export const Contacts = () => {
-    const contactContext=useContext(ConatactContext);
+    const contactContext=useContext(ContactContext);
     const {contacts} =contactContext;
     return (
         <div>
             <Fragment>
             {
-            contacts.map(contact=> <h3>{contact.name}</h3>)
+            contacts.map(contact=> 
+                <ContactItem key={contact.id} contact={contact} />
+                )
             }
             </Fragment>
         </div>

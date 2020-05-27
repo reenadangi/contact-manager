@@ -31,7 +31,7 @@ const ContactState=props=>{
             name:"Mark",
             email:"sdsd",
             phone:"999-999-999",
-            type:'personal'},
+            type:'professional'},
         ]
     };
     const[state,dispatch]=useReducer(contactReducre,initialState);
