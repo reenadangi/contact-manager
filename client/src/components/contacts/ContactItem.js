@@ -5,12 +5,11 @@ import ContactContext from '../../context/contact/contactContext';
 export const ContactItem = ({contact}) => {
     const {id,name,email,phone,type}=contact;
     const contactContext=useContext(ContactContext);
-    const {deleteContact,setCurrent}=contactContext;
+    const {deleteContact,setCurrent,clearCurrent}=contactContext;
     const onDelete=()=>{
         deleteContact(id);
+        clearCurrent();
     }
-  
-
     return (
         <div className='card bg-light'>
             <h3 className="text-primary text-left">
