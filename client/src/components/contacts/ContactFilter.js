@@ -18,7 +18,6 @@ const ContactFilter = () => {
         else{
             clearFilter();
         }
-
     }
     return (
         <form action="">
