@@ -1,6 +1,9 @@
 import React,{ useState,useContext } from 'react';
+import AlertContext from '../../context/alert/alertContext';
 
 export const Register = () => {
+    const alertContext=useContext(AlertContext);
+    const {setAlert}=alertContext;
     const [user,setUser]=useState({
         name:'',
         email:'',
@@ -11,7 +14,14 @@ export const Register = () => {
     const onChange=e=>setUser({...user,[e.target.name]:e.target.value});
     const onSubmit=e=>{
         e.preventDefault();
-        console.log('register aubmit');
+        if(name==='' ||email===''||password===''){
+            setAlert('Please enter all fields','danger')
+
+        } else if(password!==password2){
+            setAlert('password do not match','danger')
+
+        }
+      
 
     }
     return (
